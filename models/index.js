@@ -23,7 +23,7 @@ Product.belongsToMany(Tag, {
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
   through: ProductTag,
-  as: 'taggedProducts',
+  as: 'productsWithTags',
   foreignKey: 'tag_id'
 })
 module.exports = {
