@@ -50,7 +50,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new category
-  User.create({
+  Category.create({
     category_name: req.body.category_name
   })
     .then(dbUserData => res.json(dbUserData))
@@ -62,7 +62,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-  Category.update({
+  Category.update(req.body, {
     where: {
       id: req.params.id 
     }
